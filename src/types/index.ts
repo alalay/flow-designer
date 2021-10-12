@@ -105,3 +105,8 @@ export interface WrapNodeProps<T = any> {
   // resizeObserver: ResizeObserver | null;
 }
 
+export interface ReactFlowState {
+  nodes?: Node[];
+  edges?: Edge[];
+}
+
