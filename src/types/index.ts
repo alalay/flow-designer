@@ -4,6 +4,12 @@ import React, {
   HTMLAttributes,
   ReactNode,
 } from "react";
+
+
+export type TranslateExtent = [[number, number], [number, number]];
+export type NodeExtent = TranslateExtent;
+
+
 enum ArrowHeadType {
   Arrow = "arrow",
   ArrowClosed = "arrowclosed",
@@ -20,7 +26,7 @@ export interface XYPosition {
   x: number;
   y: number;
 }
-interface Node<T = any> {
+export interface Node<T = any> {
   id: ElementId;
   position: XYPosition;
   type?: string;
@@ -35,7 +41,7 @@ interface Node<T = any> {
   selectable?: boolean;
   connectable?: boolean;
 }
-interface Edge<T = any> {
+export interface Edge<T = any> {
   id: ElementId;
   type?: string;
   source: ElementId;
@@ -54,6 +60,12 @@ interface Edge<T = any> {
   isHidden?: boolean;
   data?: T;
   className?: string;
+}
+export interface Connection {
+  source: ElementId | null;
+  target: ElementId | null;
+  sourceHandle: ElementId | null;
+  targetHandle: ElementId | null;
 }
 export type FlowElement<T = any> = Node<T> | Edge<T>;
 export type Elements<T = any> = Array<FlowElement<T>>;
@@ -107,6 +119,7 @@ export interface WrapNodeProps<T = any> {
 
 export interface ReactFlowState {
   nodes: Node[];
-  edges?: Edge[];
+  edges: Edge[];
+  nodeExtent: NodeExtent;
 }
 
