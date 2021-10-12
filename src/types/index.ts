@@ -106,7 +106,7 @@ export interface WrapNodeProps<T = any> {
 }
 
 export interface ReactFlowState {
-  nodes?: Node[];
+  nodes: Node[];
   edges?: Edge[];
 }
 

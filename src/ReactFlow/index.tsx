@@ -21,7 +21,7 @@ function ReactFlow(props: ReactFlowProps) {
     <div>
       <Wrapper>
         <ElementUpdater elements={props.elements} />
-        <NodeRenderer elements={props.elements} nodeTypes={defaultNodeTypes} />
+        <NodeRenderer nodeTypes={defaultNodeTypes} />
       </Wrapper>
     </div>
   );

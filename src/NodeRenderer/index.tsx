@@ -1,15 +1,16 @@
-import React, { memo, useMemo, ComponentType, MouseEvent } from "react";
-import { Elements, FlowElement, NodeTypesType, WrapNodeProps } from "../types";
+import React, { ComponentType } from "react";
+import { useStoreState } from "../store/hooks";
+import { NodeTypesType, WrapNodeProps } from "../types";
 
 interface NodeRendererProps {
   nodeTypes: NodeTypesType;
-  elements: Elements;
 }
 
-const NodeRenderer = ({ nodeTypes, elements }: NodeRendererProps) => {
+const NodeRenderer = ({ nodeTypes }: NodeRendererProps) => {
+  const nodes = useStoreState((state) => state.nodes);
   return (
     <div className="react-flow__nodes">
-      {elements.map((node: any) => {
+      {nodes.map((node: any) => {
         const nodeType = node.type || "default";
         const NodeComponent = nodeTypes[
           nodeType

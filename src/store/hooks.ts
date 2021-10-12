@@ -3,9 +3,12 @@ import {
   ActionCreator,
   ActionCreatorsMapObject,
 } from "redux";
-import { useDispatch as reduxUseDispatch } from "react-redux";
+import { useDispatch as reduxUseDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import * as actions from "./actions";
 import { ReactFlowAction } from "./actions";
+import { ReactFlowState } from "../types";
+
+export const useTypedSelector: TypedUseSelectorHook<ReactFlowState> = useSelector;
 
 export type ActionCreatorSelector<Action> = (
   acts: typeof actions
@@ -26,3 +29,5 @@ export function useStoreActions<Action extends ReactFlowAction>(
   const action = bindActionCreators(currAction, dispatch);
   return action;
 }
+
+export const useStoreState = useTypedSelector;
