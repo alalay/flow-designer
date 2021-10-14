@@ -5,16 +5,15 @@ import React, {
   ReactNode,
 } from "react";
 
-
+export type ElementId = string;
 export type TranslateExtent = [[number, number], [number, number]];
 export type NodeExtent = TranslateExtent;
-
 
 enum ArrowHeadType {
   Arrow = "arrow",
   ArrowClosed = "arrowclosed",
 }
-type ElementId = string;
+
 export enum Position {
   Left = "left",
   Top = "top",
@@ -25,6 +24,10 @@ export enum Position {
 export interface XYPosition {
   x: number;
   y: number;
+}
+export interface Dimensions {
+  width: number;
+  height: number;
 }
 export interface Node<T = any> {
   id: ElementId;
@@ -123,3 +126,20 @@ export interface ReactFlowState {
   nodeExtent: NodeExtent;
 }
 
+export interface EdgeProps {
+  sourceX: number;
+  sourceY: number;
+  targetX: number;
+  targetY: number;
+}
+
+export interface HandleElement extends XYPosition, Dimensions {
+  id?: ElementId | null;
+  position: Position;
+}
+
+export interface NodeDimensionUpdate {
+  id: ElementId;
+  nodeElement: HTMLDivElement;
+  forceUpdate?: boolean;
+}

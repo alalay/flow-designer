@@ -6,6 +6,7 @@ import { Elements } from "../types";
 import wrapNode from "../components/Nodes/wrapNode";
 import ElementUpdater from "../ElementUpdater";
 import Wrapper from "./Wrapper";
+import EdgeRenderder from "../EdgeRenderder";
 
 const defaultNodeTypes = {
   input: wrapNode(InputNode),
@@ -22,6 +23,7 @@ function ReactFlow(props: ReactFlowProps) {
       <Wrapper>
         <ElementUpdater elements={props.elements} />
         <NodeRenderer nodeTypes={defaultNodeTypes} />
+        <EdgeRenderder />
       </Wrapper>
     </div>
   );
