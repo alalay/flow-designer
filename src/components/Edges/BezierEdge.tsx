@@ -27,7 +27,7 @@ function getBezierPath({
 
 const BezierEdge = ({ sourceX, sourceY, targetX, targetY }: EdgeProps) => {
   const path = getBezierPath({ sourceX, sourceY, targetX, targetY });
-  return <path d={path} />;
+  return <path d={path} className="react-flow__edge-path" />;
 };
 
 export default BezierEdge;
