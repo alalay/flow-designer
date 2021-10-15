@@ -74,7 +74,7 @@ export default function reactFlowReducer(
               ...node,
               __rf: {
                 ...node.__rf,
-                dimensions,
+                ...dimensions,
                 handleBounds,
               },
             };
