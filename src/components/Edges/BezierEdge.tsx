@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { EdgeProps } from "../../types";
 import { getCenter } from "./utils";
 

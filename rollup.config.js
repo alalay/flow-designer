@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from "@rollup/plugin-babel";
+import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 import { DEFAULT_EXTENSIONS as DEFAULT_BABEL_EXTENSIONS } from "@babel/core";
 
@@ -11,6 +12,10 @@ export default {
   input: "src/index.tsx",
   external: ['react', 'react-dom', (id) => id.includes('@babel/runtime')],
   plugins: [
+    postcss({
+      minimize: false,
+      inject: true,
+    }),
     resolve(),
     typescript({
       clean: true,

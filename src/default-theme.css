@@ -16,10 +16,10 @@
 }
 
 .react-flow__node-input {
-    background: #fff;
-    border-color: #0041d0;
-  
-    /* &.selected,
+  background: #fff;
+  border-color: #0041d0;
+
+  /* &.selected,
     &.selected:hover {
       box-shadow: 0 0 0 0.5px #0041d0;
     }
@@ -27,13 +27,13 @@
     .react-flow__handle {
       background: #0041d0;
     } */
-  }
-  
-  .react-flow__node-default {
-    background: #fff;
-    border-color: #1a192b;
-  
-    /* &.selected,
+}
+
+.react-flow__node-default {
+  background: #fff;
+  border-color: #1a192b;
+
+  /* &.selected,
     &.selected:hover {
       box-shadow: 0 0 0 0.5px #1a192b;
     }
@@ -41,13 +41,13 @@
     .react-flow__handle {
       background: #1a192b;
     } */
-  }
-  
-  .react-flow__node-output {
-    background: #fff;
-    border-color: #ff0072;
-  
-    /* &.selected,
+}
+
+.react-flow__node-output {
+  background: #fff;
+  border-color: #ff0072;
+
+  /* &.selected,
     &.selected:hover {
       box-shadow: 0 0 0 0.5px #ff0072;
     }
@@ -55,22 +55,27 @@
     .react-flow__handle {
       background: #ff0072;
     } */
-  }
+}
 
-  .react-flow__handle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #555;
-    border: 1px solid white;
-    border-radius: 100%;
-  
-    /* &.connectable {
+.react-flow__handle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #555;
+  border: 1px solid white;
+  border-radius: 100%;
+
+  /* &.connectable {
       cursor: crosshair;
     } */
-  }
+}
 
-  .react-flow__edge-path {
-    stroke: #b1b1b7;
-    stroke-width: 1;
-  }
+.react-flow__edge-path {
+  stroke: #b1b1b7;
+  stroke-width: 1;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}

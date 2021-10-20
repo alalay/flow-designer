@@ -41,4 +41,8 @@
 .react-flow__edge-path {
   fill: none;
 }
-
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
